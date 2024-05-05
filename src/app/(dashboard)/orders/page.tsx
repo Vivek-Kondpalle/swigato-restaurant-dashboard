@@ -1,0 +1,19 @@
+import fetchOrders from '@/service/orders';
+import OrderListing from '@/ui/layout/OrderListing';
+import OrderCard from '@/ui/orders/OrderCard';
+import OrderStage from '@/ui/orders/OrderStage';
+
+export default function Home() {
+    const orders = fetchOrders();
+
+    return (
+        <OrderListing>
+            <OrderStage />
+            {orders.map(order => (
+                <OrderCard key={order.id} order={order} />
+            ))}
+        </OrderListing>
+    );
+}
+
+
