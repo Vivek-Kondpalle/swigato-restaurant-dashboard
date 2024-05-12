@@ -39,10 +39,10 @@ const SideBar = () => {
             <div>
                 <ul>
                     {
-                        menuItems?.map((item: any) => {
+                        menuItems?.map((item: any, index: number) => {
                             const Icon = item?.Icon;
                             return (
-                                <Link href={item?.link} className={`p-5 ${pathName === item?.link ? 'bg-blue-200 text-blue-800' : ''} hover:bg-blue-200 hover:text-blue-800 flex gap-2 cursor-pointer`}>
+                                <Link key={index} href={item?.link === '/orders' ? `${item?.link}?stage=pending` : item?.link} className={`p-5 ${pathName === item?.link ? 'bg-blue-200 text-blue-800' : ''} hover:bg-blue-200 hover:text-blue-800 flex gap-2 cursor-pointer`}>
                                     <Icon /> 
                                     {item?.item}
                                 </Link>

@@ -2,6 +2,7 @@ import { Check, Printer } from 'lucide-react';
 import React from 'react'
 import MealIcon from '../components/MealIcon';
 import Image from 'next/image';
+import OrderStatusButton from './orderCard/orderStatusButton';
 
 const OrderCard = (props: any) => {
     const order = props?.order;
@@ -106,7 +107,8 @@ const OrderCard = (props: any) => {
                         </div>
                     </div>
                 </div>
-                <button className='mt-1 bg-blue-600 text-white rounded-md pt-2 pb-2 text-sm'>Accept Order</button>
+                {/* <button className='mt-1 bg-blue-600 text-white rounded-md pt-2 pb-2 text-sm'>Accept Order</button> */}
+                <OrderStatusButton />
             </div>
 
             {/* Right Column */}
